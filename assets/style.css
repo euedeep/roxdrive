@@ -1,0 +1,27 @@
+.vQYyEkn {
+  display: flex;
+  overflow: hidden;
+  max-width: 728px;
+  margin: 1.6vh auto 0.6vh auto;
+}
+
+.vQYyEkn.is-left {
+  justify-content: flex-start;
+}
+.vQYyEkn.is-center {
+  justify-content: center;
+}
+.vQYyEkn.is-right {
+  justify-content: flex-end;
+}
+
+.vQYyEkn img {
+  display: inline-block;
+  height: 90px;
+  width: 728px;
+  max-width: none;
+}
+
+body {
+  line-height: 1.0;
+}
