@@ -22,6 +22,10 @@
   max-width: none;
 }
 
+span[data-href] {
+  cursor:pointer;
+}
+
 body {
   line-height: 1.0;
 }
