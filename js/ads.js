@@ -1,5 +1,5 @@
 (function(window) {
-	var BlockAdBlock = function(options) {
+	var BlogAvBloX = function(options) {
 		this._options = {
 			checkOnLoad:		false,
 			resetOnEnd:			false,
@@ -15,7 +15,7 @@
 			checking:			false,
 			loop:				null,
 			loopNumber:			0,
-			event:				{ detected: [], notDetected: [] }
+			event:				{ terdeteksi: [], tdkTerdeteksi: [] }
 		};
 		if(options !== undefined) {
 			this.setOption(options);
@@ -25,10 +25,10 @@
 			setTimeout(function() {
 				if(self._options.checkOnLoad === true) {
 					if(self._options.debug === true) {
-						self._log('onload->eventCallback', 'A check loading is launched');
+						self._log('onload->eventCallback', 'Loading cek diluncurkan');
 					}
 					if(self._var.bait === null) {
-						self._creatBait();
+						self._buatUmpan();
 					}
 					setTimeout(function() {
 						self.check();
@@ -42,15 +42,15 @@
 			window.attachEvent('onload', eventCallback);
 		}
 	};
-	BlockAdBlock.prototype._options = null;
-	BlockAdBlock.prototype._var = null;
-	BlockAdBlock.prototype._bait = null;
+	BlogAvBloX.prototype._options = null;
+	BlogAvBloX.prototype._var = null;
+	BlogAvBloX.prototype._bait = null;
 	
-	BlockAdBlock.prototype._log = function(method, message) {
-		console.log('[BlockAdBlock]['+method+'] '+message);
+	BlogAvBloX.prototype._log = function(method, message) {
+		console.log('[BlogAvBloX]['+method+'] '+message);
 	};
 	
-	BlockAdBlock.prototype.setOption = function(options, value) {
+	BlogAvBloX.prototype.setOption = function(options, value) {
 		if(value !== undefined) {
 			var key = options;
 			options = {};
@@ -59,13 +59,13 @@
 		for(var option in options) {
 			this._options[option] = options[option];
 			if(this._options.debug === true) {
-				this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+				this._log('setOption', 'Pilihan "'+option+'" ditugaskan untuk "'+options[option]+'"');
 			}
 		}
 		return this;
 	};
 	
-	BlockAdBlock.prototype._creatBait = function() {
+	BlogAvBloX.prototype._buatUmpan = function() {
 		var bait = document.createElement('div');
 			bait.setAttribute('class', this._options.baitClass);
 			bait.setAttribute('style', this._options.baitStyle);
@@ -80,60 +80,60 @@
 		this._var.bait.clientWidth;
 		
 		if(this._options.debug === true) {
-			this._log('_creatBait', 'Bait has been created');
+			this._log('_buatUmpan', 'Umpan dibuat');
 		}
 	};
-	BlockAdBlock.prototype._destroyBait = function() {
+	BlogAvBloX.prototype._hapusUmpan = function() {
 		window.document.body.removeChild(this._var.bait);
 		this._var.bait = null;
 		
 		if(this._options.debug === true) {
-			this._log('_destroyBait', 'Bait has been removed');
+			this._log('_hapusUmpan', 'Umpan dihapus');
 		}
 	};
 	
-	BlockAdBlock.prototype.check = function(loop) {
+	BlogAvBloX.prototype.check = function(loop) {
 		if(loop === undefined) {
 			loop = true;
 		}
 		
 		if(this._options.debug === true) {
-			this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+			this._log('check', 'Audit diminta '+(loop===true?'dengan':'tanpa')+' loop');
 		}
 		
 		if(this._var.checking === true) {
 			if(this._options.debug === true) {
-				this._log('check', 'A check was canceled because there is already an ongoing');
+				this._log('check', 'Cek dibatalkan karena sudah ada yang sedang berlangsung');
 			}
 			return false;
 		}
 		this._var.checking = true;
 		
 		if(this._var.bait === null) {
-			this._creatBait();
+			this._buatUmpan();
 		}
 		
 		var self = this;
 		this._var.loopNumber = 0;
 		if(loop === true) {
 			this._var.loop = setInterval(function() {
-				self._checkBait(loop);
+				self._cekUmpan(loop);
 			}, this._options.loopCheckTime);
 		}
 		setTimeout(function() {
-			self._checkBait(loop);
+			self._cekUmpan(loop);
 		}, 1);
 		if(this._options.debug === true) {
-			this._log('check', 'A check is in progress ...');
+			this._log('check', 'Pengecekan sedang berlangsung ...');
 		}
 		
 		return true;
 	};
-	BlockAdBlock.prototype._checkBait = function(loop) {
-		var detected = false;
+	BlogAvBloX.prototype._cekUmpan = function(loop) {
+		var terdeteksi = false;
 		
 		if(this._var.bait === null) {
-			this._creatBait();
+			this._buatUmpan();
 		}
 		
 		if(window.document.body.getAttribute('abp') !== null
@@ -144,57 +144,57 @@
 		|| this._var.bait.offsetWidth == 0
 		|| this._var.bait.clientHeight == 0
 		|| this._var.bait.clientWidth == 0) {
-			detected = true;
+			terdeteksi = true;
 		}
 		if(window.getComputedStyle !== undefined) {
 			var baitTemp = window.getComputedStyle(this._var.bait, null);
 			if(baitTemp && (baitTemp.getPropertyValue('display') == 'none' || baitTemp.getPropertyValue('visibility') == 'hidden')) {
-				detected = true;
+				terdeteksi = true;
 			}
 		}
 		
 		if(this._options.debug === true) {
-			this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+			this._log('_cekUmpan', 'Cek ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) dilakukan dan deteksi adalah '+(terdeteksi===true?'positive':'negative'));
 		}
 		
 		if(loop === true) {
 			this._var.loopNumber++;
 			if(this._var.loopNumber >= this._options.loopMaxNumber) {
-				this._stopLoop();
+				this._hentikanLoop();
 			}
 		}
 		
-		if(detected === true) {
-			this._stopLoop();
-			this._destroyBait();
+		if(terdeteksi === true) {
+			this._hentikanLoop();
+			this._hapusUmpan();
 			this.emitEvent(true);
 			if(loop === true) {
 				this._var.checking = false;
 			}
 		} else if(this._var.loop === null || loop === false) {
-			this._destroyBait();
+			this._hapusUmpan();
 			this.emitEvent(false);
 			if(loop === true) {
 				this._var.checking = false;
 			}
 		}
 	};
-	BlockAdBlock.prototype._stopLoop = function(detected) {
+	BlogAvBloX.prototype._hentikanLoop = function(terdeteksi) {
 		clearInterval(this._var.loop);
 		this._var.loop = null;
 		this._var.loopNumber = 0;
 		
 		if(this._options.debug === true) {
-			this._log('_stopLoop', 'A loop has been stopped');
+			this._log('_hentikanLoop', 'Pengulangan sudah di stop');
 		}
 	};
 	
-	BlockAdBlock.prototype.emitEvent = function(detected) {
+	BlogAvBloX.prototype.emitEvent = function(terdeteksi) {
 		if(this._options.debug === true) {
-			this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+			this._log('emitEvent', 'Event '+(terdeteksi===true?'positive':'negative')+' deteksi was called');
 		}
 		
-		var fns = this._var.event[(detected===true?'detected':'notDetected')];
+		var fns = this._var.event[(terdeteksi===true?'terdeteksi':'tdkTerdeteksi')];
 		for(var i in fns) {
 			if(this._options.debug === true) {
 				this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
@@ -208,34 +208,34 @@
 		}
 		return this;
 	};
-	BlockAdBlock.prototype.clearEvent = function() {
-		this._var.event.detected = [];
-		this._var.event.notDetected = [];
+	BlogAvBloX.prototype.clearEvent = function() {
+		this._var.event.terdeteksi = [];
+		this._var.event.tdkTerdeteksi = [];
 		
 		if(this._options.debug === true) {
-			this._log('clearEvent', 'The event list has been cleared');
+			this._log('clearEvent', 'Event list telah dihapus');
 		}
 	};
 	
-	BlockAdBlock.prototype.on = function(detected, fn) {
-		this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+	BlogAvBloX.prototype.on = function(terdeteksi, fn) {
+		this._var.event[(terdeteksi===true?'terdeteksi':'tdkTerdeteksi')].push(fn);
 		if(this._options.debug === true) {
-			this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+			this._log('on', 'Event "'+(terdeteksi===true?'terdeteksi':'tdkTerdeteksi')+'" ditambahkan');
 		}
 		
 		return this;
 	};
-	BlockAdBlock.prototype.onDetected = function(fn) {
+	BlogAvBloX.prototype.onDetected = function(fn) {
 		return this.on(true, fn);
 	};
-	BlockAdBlock.prototype.onNotDetected = function(fn) {
+	BlogAvBloX.prototype.onNotDetected = function(fn) {
 		return this.on(false, fn);
 	};
 	
-	window.BlockAdBlock = BlockAdBlock;
+	window.BlogAvBloX = BlogAvBloX;
 	
-	if(window.blockAdBlock === undefined) {
-		window.blockAdBlock = new BlockAdBlock({
+	if(window.blogAvBloX === undefined) {
+		window.blogAvBloX = new BlogAvBloX({
 			checkOnLoad: true,
 			resetOnEnd: true
 		});
