@@ -10,7 +10,7 @@
 			debug:				false
 		};
 		this._var = {
-			version:			'3.2.1',
+			version:			'3.2.3',
 			bait:				null,
 			checking:			false,
 			loop:				null,
