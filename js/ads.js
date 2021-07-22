@@ -1,4 +1,4 @@
 var e=document.createElement('div');
 e.id='aleale';
-e.style.display='none';
+e.className='adslot';
 document.body.appendChild(e);
