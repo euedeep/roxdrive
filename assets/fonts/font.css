@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Proxima Nova Bold Italic';
+	src: local('Proxima Nova Bold Italic'), url('proxima-nova-bold-italic-webfont.eot');
+    src: local('Proxima Nova Bold Italic'), url('proxima-nova-bold-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         local('Proxima Nova Bold Italic'), url('proxima-nova-bold-italic-webfont.woff') format('woff'),
+         local('Proxima Nova Bold Italic'), url('proxima-nova-bold-italic-webfont.ttf') format('truetype'),
+         local('Proxima Nova Bold Italic'), url('proxima-nova-bold-italic-webfont.svg#proxima_novabold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Bold';
+	src: local('Proxima Nova Bold'), url('proxima-nova-bold-webfont.eot');
+    src: local('Proxima Nova Bold'), url('proxima-nova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         local('Proxima Nova Bold'), url('proxima-nova-bold-webfont.woff') format('woff'),
+         local('Proxima Nova Bold'), url('proxima-nova-bold-webfont.ttf') format('truetype'),
+         local('Proxima Nova Bold'), url('proxima-nova-bold-webfont.svg#proxima_novabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Light Italic';
+	src: local('Proxima Nova Light Italic'), url('proxima-nova-light-italic-webfont.eot');
+    src: local('Proxima Nova Light Italic'), url('proxima-nova-light-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         local('Proxima Nova Light Italic'), url('proxima-nova-light-italic-webfont.woff') format('woff'),
+         local('Proxima Nova Light Italic'), url('proxima-nova-light-italic-webfont.ttf') format('truetype'),
+         local('Proxima Nova Light Italic'), url('proxima-nova-light-italic-webfont.svg#proxima_novalight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Light';
+	src: local('Proxima Nova Light'), url('proxima-nova-light-webfont.eot');
+    src: local('Proxima Nova Light'), url('proxima-nova-light-webfont.eot?#iefix') format('embedded-opentype'),
+         local('Proxima Nova Light'), url('proxima-nova-light-webfont.woff') format('woff'),
+         local('Proxima Nova Light'), url('proxima-nova-light-webfont.ttf') format('truetype'),
+         local('Proxima Nova Light'), url('proxima-nova-light-webfont.svg#proxima_novalight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Regular Italic';
+	src: local('Proxima Nova Regular Italic'), url('proxima-nova-regular-italic-webfont.eot');
+    src: local('Proxima Nova Regular Italic'), url('proxima-nova-regular-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         local('Proxima Nova Regular Italic'), url('proxima-nova-regular-italic-webfont.woff') format('woff'),
+         local('Proxima Nova Regular Italic'), url('proxima-nova-regular-italic-webfont.ttf') format('truetype'),
+         local('Proxima Nova Regular Italic'), url('proxima-nova-regular-italic-webfont.svg#proxima_novaregular_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Regular';
+	src: local('Proxima Nova Regular'), url('proxima-nova-regular-webfont.eot');
+    src: local('Proxima Nova Regular'), url('proxima-nova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         local('Proxima Nova Regular'), url('proxima-nova-regular-webfont.woff') format('woff'),
+         local('Proxima Nova Regular'), url('proxima-nova-regular-webfont.ttf') format('truetype'),
+         local('Proxima Nova Regular'), url('proxima-nova-regular-webfont.svg#proxima_novaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Semibold Italic';
+	src: local('Proxima Nova Semibold Italic'), url('proxima-nova-semibold-italic-webfont.eot');
+    src: local('Proxima Nova Semibold Italic'), url('proxima-nova-semibold-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         local('Proxima Nova Semibold Italic'), url('proxima-nova-semibold-italic-webfont.woff') format('woff'),
+         local('Proxima Nova Semibold Italic'), url('proxima-nova-semibold-italic-webfont.ttf') format('truetype'),
+         local('Proxima Nova Semibold Italic'), url('proxima-nova-semibold-italic-webfont.svg#proxima_novasemibold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Semibold';
+	src: local('Proxima Nova Semibold'), url('proxima-nova-semibold-webfont.eot');
+    src: local('Proxima Nova Semibold'), url('proxima-nova-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         local('Proxima Nova Semibold'), url('proxima-nova-semibold-webfont.woff') format('woff'),
+         local('Proxima Nova Semibold'), url('proxima-nova-semibold-webfont.ttf') format('truetype'),
+         local('Proxima Nova Semibold'), url('proxima-nova-semibold-webfont.svg#proxima_novasemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
